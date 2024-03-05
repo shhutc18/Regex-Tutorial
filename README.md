@@ -31,6 +31,15 @@ When used together, as in `^abc$`, the regular expression will match an entire l
 
 It's important to note that the behavior of these anchors can be affected by the multiline mode of the regex engine. In multiline mode, `^` and `$` match the start and end of each line, rather than the start and end of the entire input string.
 
+Code:
+```javascript
+let regex = /^abc$/;
+console.log(regex.test("abc")); // true
+console.log(regex.test("abcd")); // false
+console.log(regex.test("abcdabc")); // false
+console.log(regex.test("abcabc")); // false 
+```
+
 ### Quantifiers
 
 The `+` is a quantifier that means one or more of the preceding element. The `{2,6}` is a quantifier that means between 2 and 6 of the preceding element.
